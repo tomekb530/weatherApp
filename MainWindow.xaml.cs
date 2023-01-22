@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Weather.NET;
+using Weather.NET.Enums;
+using Weather.NET.Models.WeatherModel;
+using Weather.NET.Models.PollutionModel;
+
 
 namespace weatherApp
 {
@@ -20,22 +25,20 @@ namespace weatherApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        private GeoCoding geoCoding;
         private Config config;
-        private WeatherDownloader weatherDownloader;
+        WeatherClient client;
         public MainWindow()
         {
             InitializeComponent();
             config = new Config();
-            geoCoding = new GeoCoding(config.getConfig("apiKey"));
-            weatherDownloader = new WeatherDownloader(config.getConfig("apiKey"));
-
+            client = new WeatherClient(config.getConfig("apiKey"));
+            GetWeatherData();
         }
 
         public async void GetWeatherData()
         {
-            List<GeoData> geoData = geoCoding.getGeoData("Budapest").Result;
-            
+            List<WeatherModel> forecasts = await client.GetForecastAsync("Biała Podlaska", 8, Measurement.Metric, Weather.NET.Enums.Language.Polish);
+
         }
     }
 }
