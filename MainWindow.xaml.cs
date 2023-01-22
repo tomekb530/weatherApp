@@ -20,9 +20,22 @@ namespace weatherApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GeoCoding geoCoding;
+        private Config config;
+        private WeatherDownloader weatherDownloader;
         public MainWindow()
         {
             InitializeComponent();
+            config = new Config();
+            geoCoding = new GeoCoding(config.getConfig("apiKey"));
+            weatherDownloader = new WeatherDownloader(config.getConfig("apiKey"));
+
+        }
+
+        public async void GetWeatherData()
+        {
+            List<GeoData> geoData = geoCoding.getGeoData("Budapest").Result;
+            
         }
     }
 }

@@ -10,8 +10,7 @@ namespace weatherApp
 {
     internal class ConfigData
     {
-        [JsonPropertyName("apiKey")]
-        public string apiKey;
+        public string apiKey { get; set; }
         //add moar
     }
     public class Config
@@ -19,30 +18,47 @@ namespace weatherApp
         private ConfigData data;
         public Config()
         {
-            // Read the config file
-            string configJson = System.IO.File.ReadAllText("config.json");
-            if (configJson == null)
+            //check if config file exists
+            if (System.IO.File.Exists("config.json"))
             {
-                data = new ConfigData();
-            }
-            else
-            {
-                // Deserialize the config file
+                //read config file
+                string json = System.IO.File.ReadAllText("config.json");
+                //deserialize json
                 try
                 {
-                    data = JsonSerializer.Deserialize<ConfigData>(configJson);
-                }catch(Exception e)
+                    data = JsonSerializer.Deserialize<ConfigData>(json);
+                    
+                }
+                catch (Exception e)
                 {
                     Console.WriteLine("Error reading config file: " + e.Message);
                     data = new ConfigData();
                 }
             }
+            else
+            {
+                //create new config file
+                data = new ConfigData();
+                //save config file
+                saveConfig();
+            }
 
+        }
+
+        public string getConfig(string type)
+        {
+            switch (type)
+            {
+                case "apiKey":
+                    return data.apiKey;
+                default:
+                    return "";
+            }
         }
         
         public void saveConfig()
         {
-            string json = JsonSerializer.Serialize(data);
+            string json = JsonSerializer.Serialize<ConfigData>(data);
             System.IO.File.WriteAllText("config.json", json);
         }
     }
