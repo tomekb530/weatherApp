@@ -38,7 +38,18 @@ namespace weatherApp
         public async void GetWeatherData()
         {
             List<WeatherModel> forecasts = await client.GetForecastAsync("Biała Podlaska", 8, Measurement.Metric, Weather.NET.Enums.Language.Polish);
-
+            string temp = forecasts[0].Main.Temperature.ToString();
+            string tempMin = forecasts[0].Main.TemperatureMin.ToString();
+            string tempMax = forecasts[0].Main.TemperatureMax.ToString();
+            string humidity = forecasts[0].Main.HumidityPercentage.ToString();
+            string windSpeed = forecasts[0].Wind.Speed.ToString();
+            string pressure = forecasts[0].Main.AtmosphericPressure.ToString();
+            string realFeel = forecasts[0].Main.TemperaturePerception.ToString();
+            temperatureTextBlock.Text = temp+ " °C";
+            pressureTextbox.Text = pressure + " hPa";
+            descriptionTextbox.Text = forecasts[0].Weather[0].Description;
+            windSpeedTextBox.Text = windSpeed;
+            realFeelTextBox.Text = realFeel + " °C";
         }
     }
 }
