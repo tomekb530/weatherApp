@@ -66,6 +66,15 @@
                            />
             </Grid>
         </GroupBox>
-
+        <GroupBox Grid.Column="1" Header="Ustawienia" Grid.Row="1" Margin="580,229,10,10">
+            <StackPanel>
+                <Button x:Name="settingsButton" Margin="10,20,10,5" 
+                        Content="Ustawienia" FontSize="14"
+                        />
+                <Button x:Name="themeButton" Margin="10,5,10,10" 
+                        Content="Motywy" FontSize="14"
+                        />
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>
