@@ -45,7 +45,7 @@ namespace weatherApp
             string windSpeed = forecasts[0].Wind.Speed.ToString();
             string pressure = forecasts[0].Main.AtmosphericPressure.ToString();
             string realFeel = forecasts[0].Main.TemperaturePerception.ToString();
-            temperatureTextBlock.Text = temp+ " °C";
+            temperatureLabel.Content = temp+ " °C";
             pressureTextbox.Text = pressure + " hPa";
             descriptionTextbox.Text = forecasts[0].Weather[0].Description;
             windSpeedTextBox.Text = windSpeed;

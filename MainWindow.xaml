@@ -8,7 +8,6 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         WindowStyle="None"
-        Background="#141414"
         Style="{StaticResource CustomWindowStyle}"
         Title="Weather App" Height="450" Width="800">
     <Grid>
@@ -31,12 +30,13 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <TextBlock x:Name="cityTextBlock"
-                           Grid.Column="0" Grid.Row="0" Margin="10,10,54,0" 
+                           Grid.Column="0" Grid.Row="0" Margin="20,10,44,0" 
                            Text="Biała Podlaska" FontSize="28" FontWeight="Bold"
                            VerticalAlignment="Top"
                            />
-                <TextBlock x:Name="temperatureTextBlock" 
-                           Text="2°C" FontSize="58" FontWeight="Light" Margin="72,54,180,44"
+                <Label x:Name="temperatureLabel"
+                           Content="21,37°C"
+                           FontSize="58" FontWeight="Light" Margin="20,52,39,27"
                            />
                 <TextBlock Margin="267,52,-95,95"
                            Text="Opis:" FontSize="12" 
@@ -66,7 +66,7 @@
                            />
             </Grid>
         </GroupBox>
-        <GroupBox Grid.Column="1" Header="Ustawienia" Grid.Row="1" Margin="580,229,10,10">
+        <GroupBox Grid.Column="1" Header="Ustawienia" Grid.Row="1" Margin="627,0,10,10" Height="209" VerticalAlignment="Bottom">
             <StackPanel>
                 <Button x:Name="settingsButton" Margin="10,20,10,5" 
                         Content="Ustawienia" FontSize="14"
@@ -74,7 +74,36 @@
                 <Button x:Name="themeButton" Margin="10,5,10,10" 
                         Content="Motywy" FontSize="14"
                         />
+                <Button x:Name="aboutButton" Margin="10,40,10,10" 
+                        Content="About" FontSize="14"
+                        />
             </StackPanel>
+        </GroupBox>
+        <GroupBox Grid.Column="1" Header="Prognoza długoterminowa" Grid.Row="1" Margin="10,0,176,10" Height="209" VerticalAlignment="Bottom">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="5">
+                    <TextBlock Text="Poniedziałek" FontSize="18" FontWeight="Bold"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="23/01/2023" FontSize="16" FontWeight="ExtraLight"
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="21,37°C" FontSize="14"
+                               HorizontalAlignment="Left"
+                               Margin="0,15,0,5"/>
+                    <TextBlock Text="1031 hPa" FontSize="14" 
+                               HorizontalAlignment="Left"/>
+                    <TextBlock Text="Lekkie opady śniegu" FontSize="14"
+                               FontWeight="Thin" TextWrapping="Wrap"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                </StackPanel>
+            </Grid>
         </GroupBox>
     </Grid>
 </Window>
