@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:weatherApp"
         mc:Ignorable="d"
-        Title="Themes" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Style="{StaticResource CustomWindowStyle}"
+        Title="Themes" Height="300" Width="300">
     <Grid>
-        
+        <StackPanel>
+            <Label Content="Motywy" Margin="0,10,0,15"
+                   FontSize="36" FontWeight="DemiBold" 
+                   HorizontalAlignment="Center"/>
+            <Label Content="Motywy:"
+                   FontSize="18" FontWeight="Light"
+                   HorizontalAlignment="Center"/>
+            <ComboBox x:Name="themesComboBox"
+                      Margin="0,0,0,5" Width="200" Height="25" 
+                      HorizontalAlignment="Center">
+                <ComboBoxItem Content="Light"/>
+                <ComboBoxItem Content="Colourful Light"/>
+                <ComboBoxItem Content="Dark"/>
+                <ComboBoxItem Content="Colourful Dark"/>
+            </ComboBox>
+            <Button Content="Zapisz" Margin="0,40,0,0"
+                    Height="25" Width="150"/>
+        </StackPanel>
     </Grid>
 </Window>

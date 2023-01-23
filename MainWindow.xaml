@@ -66,7 +66,7 @@
                            />
             </Grid>
         </GroupBox>
-        <GroupBox Grid.Column="1" Header="Ustawienia" Grid.Row="1" Margin="627,0,10,10" Height="209" VerticalAlignment="Bottom">
+        <GroupBox Grid.Column="1" Header="Inne" Grid.Row="1" Margin="627,0,10,10" Height="209" VerticalAlignment="Bottom">
             <StackPanel>
                 <Button x:Name="settingsButton" Margin="10,20,10,5" 
                         Content="Ustawienia" FontSize="14" Click="settingsButton_Click"

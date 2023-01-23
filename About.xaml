@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:weatherApp"
         mc:Ignorable="d"
-        Title="About" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Style="{StaticResource CustomWindowStyle}"
+        Title="About" Height="300" Width="300">
     <Grid>
-        
+        <StackPanel>
+            <Label Content="About" Margin="0,5,0,0"
+                   FontSize="36" FontWeight="Bold" 
+                   HorizontalAlignment="Center"/>
+            <Label Content="Coded by:"
+                   FontSize="18" FontWeight="Medium"
+                   HorizontalAlignment="Center"/>
+            <Label Content="Tomasz Bujnik"
+                   FontSize="18" FontWeight="Light"
+                   HorizontalAlignment="Center"/>
+            <Label Content="Michał Kożuch"
+                   FontSize="18" FontWeight="Light"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,10"/>
+            <MediaElement Source="Images/2137.gif" Height="80" Width="87" 
+                          LoadedBehavior="Play"/>
+        </StackPanel>
     </Grid>
 </Window>
