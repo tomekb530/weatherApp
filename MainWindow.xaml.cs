@@ -38,7 +38,7 @@ namespace weatherApp
         public async void GetWeatherData()
         {
             List<WeatherModel> forecasts = await client.GetForecastAsync("Biała Podlaska", 8, Measurement.Metric, Weather.NET.Enums.Language.Polish);
-            Console.WriteLine(forecasts[0].);
+            Console.WriteLine(forecasts[0]);
             string temp = forecasts[0].Main.Temperature.ToString();
             string tempMin = forecasts[0].Main.TemperatureMin.ToString();
             string tempMax = forecasts[0].Main.TemperatureMax.ToString();
