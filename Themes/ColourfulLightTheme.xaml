@@ -4145,7 +4145,7 @@
                                                        StrokeThickness="2"/>
                                         </Button>
 
-                                        <Button x:Name="btnRestore"
+                                        <!--<Button x:Name="btnRestore"
                                                 Background="Transparent"
                                                 BorderBrush="Transparent"
                                                 Width="40"
@@ -4160,7 +4160,7 @@
                                                            Stroke="{StaticResource ControlGlythColour}"
                                                            Margin="0 3 3 0"/>
                                             </Grid>
-                                        </Button>
+                                        </Button>-->
                                         <Button x:Name="btnClose"
                                                 Background="Transparent"
                                                 BorderBrush="Transparent"
