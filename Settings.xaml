@@ -9,27 +9,33 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         Style="{StaticResource CustomWindowStyle}"
-        Title="Settings" Height="300" Width="300">
+        Title="Settings" Height="350" Width="300">
     <Grid>
         <StackPanel>
-            <Label Content="Ustawienia" Margin="0,10,0,0"
+            <Label Content="Ustawienia"
                    FontSize="36" FontWeight="DemiBold" 
                    HorizontalAlignment="Center"/>
             <Label Content="Miasto:"
                    FontSize="18" FontWeight="Light"
                    HorizontalAlignment="Center"/>
             <TextBox Name="cityName"
-                     Margin="0,0,0,5" Width="200" Height="25" 
+                     Width="200" Height="25" 
                      HorizontalAlignment="Center"/>
             <Label Content="Jednostka:"
                    FontSize="18" FontWeight="Light"
                    HorizontalAlignment="Center"/>
             <ComboBox x:Name="unitComboBox"
-                      Margin="0,0,0,5" Width="200" Height="25" 
+                      Width="200" Height="25" 
                       HorizontalAlignment="Center">
                 <ComboBoxItem Content="Celsius"/>
                 <ComboBoxItem Content="Fahrenheit"/>
             </ComboBox>
+            <Label Content="Klucz API:"
+                   FontSize="18" FontWeight="Light"
+                   HorizontalAlignment="Center"/>
+            <TextBox Name="apiKey"
+                     Width="200" Height="25" 
+                     HorizontalAlignment="Center"/>
             <Button Content="Zapisz" Margin="0,20,0,0"
                     Height="25" Width="150"/>
         </StackPanel>
