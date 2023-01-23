@@ -11,6 +11,8 @@ namespace weatherApp
     internal class ConfigData
     {
         public string apiKey { get; set; }
+        public string city { get; set; }
+        public string units { get; set; }
         //add moar
     }
     public class Config
@@ -51,11 +53,32 @@ namespace weatherApp
             {
                 case "apiKey":
                     return data.apiKey;
+                case "city":
+                    return data.city;
+                case "units":
+                    return data.units;
                 default:
                     return "";
             }
         }
         
+        public void setConfig(string type, string value)
+        {
+            switch (type)
+            {
+                case "apiKey":
+                    data.apiKey = value;
+                    break;
+                case "city":
+                    data.city = value;
+                    break;
+                case "units":
+                    data.units = value;
+                    break;
+                default:
+                    break;
+            }
+        }
         public void saveConfig()
         {
             string json = JsonSerializer.Serialize<ConfigData>(data);

@@ -18,7 +18,7 @@
             <Label Content="Miasto:"
                    FontSize="18" FontWeight="Light"
                    HorizontalAlignment="Center"/>
-            <TextBox Name="cityName"
+            <TextBox x:Name="cityName"
                      Width="200" Height="25" 
                      HorizontalAlignment="Center"/>
             <Label Content="Jednostka:"
@@ -33,11 +33,11 @@
             <Label Content="Klucz API:"
                    FontSize="18" FontWeight="Light"
                    HorizontalAlignment="Center"/>
-            <TextBox Name="apiKey"
+            <TextBox x:Name="apiKey"
                      Width="200" Height="25" 
                      HorizontalAlignment="Center"/>
             <Button Content="Zapisz" Margin="0,20,0,0"
-                    Height="25" Width="150"/>
+                    Height="25" Width="150" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>
