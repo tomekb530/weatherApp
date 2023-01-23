@@ -13,6 +13,7 @@ namespace weatherApp
         public string apiKey { get; set; }
         public string city { get; set; }
         public string units { get; set; }
+        public string theme { get; set; }
         //add moar
     }
     public class Config
@@ -57,6 +58,8 @@ namespace weatherApp
                     return data.city;
                 case "units":
                     return data.units;
+                case "theme":
+                    return data.theme;
                 default:
                     return "";
             }
@@ -74,6 +77,9 @@ namespace weatherApp
                     break;
                 case "units":
                     data.units = value;
+                    break;
+                case "theme":
+                    data.theme = value;
                     break;
                 default:
                     break;

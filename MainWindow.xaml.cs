@@ -17,6 +17,7 @@ using Weather.NET.Enums;
 using Weather.NET.Models.WeatherModel;
 using Weather.NET.Models.PollutionModel;
 using System.Globalization;
+using REghZyFramework.Themes;
 
 namespace weatherApp
 {
@@ -36,6 +37,7 @@ namespace weatherApp
             lang = new CultureInfo("pl-PL");
             GetWeatherData();
             GetFutureWeatherData();
+            SetTheme();
         }
 
         public string getTempUnit()
@@ -50,11 +52,32 @@ namespace weatherApp
             }
         }
 
+        public void SetTheme()
+        {
+            if (config.getConfig("theme") == "dark")
+            {
+                ThemesController.SetTheme(ThemesController.ThemeTypes.Dark);
+            }
+            else if (config.getConfig("theme") == "light")
+            {
+                ThemesController.SetTheme(ThemesController.ThemeTypes.Light);
+            }
+            else if (config.getConfig("theme") == "clight")
+            {
+                ThemesController.SetTheme(ThemesController.ThemeTypes.ColourfulLight);
+            }
+            else if (config.getConfig("theme") == "cdark")
+            {
+                ThemesController.SetTheme(ThemesController.ThemeTypes.ColourfulDark);
+            }
+        }
+
         public void Refresh() {
             config = new Config();
             client = new WeatherClient(config.getConfig("apiKey"));
             GetWeatherData();
             GetFutureWeatherData();
+            SetTheme();
         }
 
         public async void GetWeatherData()
@@ -242,7 +265,7 @@ namespace weatherApp
 
         private void themeButton_Click(object sender, RoutedEventArgs e)
         {
-            Themes themes = new Themes();
+            Themes themes = new Themes(Refresh);
             themes.Show();
         }
 

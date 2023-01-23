@@ -20,14 +20,14 @@
                    HorizontalAlignment="Center"/>
             <ComboBox x:Name="themesComboBox"
                       Margin="0,0,0,5" Width="200" Height="25" 
-                      HorizontalAlignment="Center">
+                      HorizontalAlignment="Center" SelectionChanged="themesComboBox_SelectionChanged">
                 <ComboBoxItem Content="Light"/>
                 <ComboBoxItem Content="Colourful Light"/>
                 <ComboBoxItem Content="Dark"/>
                 <ComboBoxItem Content="Colourful Dark"/>
             </ComboBox>
             <Button Content="Zapisz" Margin="0,40,0,0"
-                    Height="25" Width="150"/>
+                    Height="25" Width="150" Click="Button_Click"/>
         </StackPanel>
     </Grid>
 </Window>
