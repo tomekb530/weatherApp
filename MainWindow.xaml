@@ -40,26 +40,26 @@
                            />
                 <TextBlock Margin="267,0,-95,95"
                            Text="Opis:" FontSize="12" 
-                           Foreground="#4CD3D3D3" Height="21" VerticalAlignment="Bottom"
+                           Height="21" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="descriptionTextbox" Margin="267,0,-334,71" 
                            Text="Lekkie opady śniegu" FontSize="16" Height="30" VerticalAlignment="Bottom"
                            />
                 <TextBlock Margin="267,0,-117,55"
                            Text="Ciśnienie:" FontSize="12" 
-                           Foreground="#4CD3D3D3" Height="16" VerticalAlignment="Bottom"
+                           Height="16" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="pressureTextbox" 
                            Text="1031 hPa" FontSize="16" Margin="267,0,-125,32" Height="24" VerticalAlignment="Bottom"
                            />
                 <TextBlock Text="Prędkość wiatru:" FontSize="12" 
-                           Foreground="#4CD3D3D3" Margin="490,0,-371,100" Height="16" VerticalAlignment="Bottom"
+                           Margin="490,0,-371,100" Height="16" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="windSpeedTextBox" FontSize="16"
                            Text="W chuj" Margin="490,0,-447,77" Height="24" VerticalAlignment="Bottom"
                            />
                 <TextBlock Text="Odczuwalna temperatura:" FontSize="12" 
-                           Foreground="#4CD3D3D3" Margin="490,0,-371,55" Height="16" VerticalAlignment="Bottom"
+                           Margin="490,0,-371,55" Height="16" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="realFeelTextBox" FontSize="16"
                            Text="piździ jak w kieleckim" Margin="490,0,-447,32" Height="24" VerticalAlignment="Bottom"
