@@ -69,13 +69,13 @@
         <GroupBox Grid.Column="1" Header="Ustawienia" Grid.Row="1" Margin="627,0,10,10" Height="209" VerticalAlignment="Bottom">
             <StackPanel>
                 <Button x:Name="settingsButton" Margin="10,20,10,5" 
-                        Content="Ustawienia" FontSize="14"
+                        Content="Ustawienia" FontSize="14" Click="settingsButton_Click"
                         />
                 <Button x:Name="themeButton" Margin="10,5,10,10" 
-                        Content="Motywy" FontSize="14"
+                        Content="Motywy" FontSize="14" Click="themeButton_Click"
                         />
                 <Button x:Name="aboutButton" Margin="10,40,10,10" 
-                        Content="About" FontSize="14"
+                        Content="About" FontSize="14" Click="aboutButton_Click"
                         />
             </StackPanel>
         </GroupBox>
