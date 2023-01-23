@@ -38,31 +38,31 @@
                            Content="21,37°C"
                            FontSize="58" FontWeight="Light" Margin="20,52,39,27"
                            />
-                <TextBlock Margin="267,52,-95,95"
+                <TextBlock Margin="267,0,-95,95"
                            Text="Opis:" FontSize="12" 
-                           Foreground="#4CD3D3D3"
+                           Foreground="#4CD3D3D3" Height="21" VerticalAlignment="Bottom"
                            />
-                <TextBlock x:Name="descriptionTextbox" Margin="267,67,-334,71" 
-                           Text="Lekkie opady śniegu" FontSize="16"
+                <TextBlock x:Name="descriptionTextbox" Margin="267,0,-334,71" 
+                           Text="Lekkie opady śniegu" FontSize="16" Height="30" VerticalAlignment="Bottom"
                            />
-                <TextBlock Margin="267,97,-117,55"
+                <TextBlock Margin="267,0,-117,55"
                            Text="Ciśnienie:" FontSize="12" 
-                           Foreground="#4CD3D3D3"
+                           Foreground="#4CD3D3D3" Height="16" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="pressureTextbox" 
-                           Text="1031 hPa" FontSize="16" Margin="267,112,-125,32"
+                           Text="1031 hPa" FontSize="16" Margin="267,0,-125,32" Height="24" VerticalAlignment="Bottom"
                            />
                 <TextBlock Text="Prędkość wiatru:" FontSize="12" 
-                           Foreground="#4CD3D3D3" Margin="490,52,-371,100"
+                           Foreground="#4CD3D3D3" Margin="490,0,-371,100" Height="16" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="windSpeedTextBox" FontSize="16"
-                           Text="W chuj" Margin="490,67,-447,77"
+                           Text="W chuj" Margin="490,0,-447,77" Height="24" VerticalAlignment="Bottom"
                            />
                 <TextBlock Text="Odczuwalna temperatura:" FontSize="12" 
-                           Foreground="#4CD3D3D3" Margin="490,97,-371,55"
+                           Foreground="#4CD3D3D3" Margin="490,0,-371,55" Height="16" VerticalAlignment="Bottom"
                            />
                 <TextBlock x:Name="realFeelTextBox" FontSize="16"
-                           Text="piździ jak w kieleckim" Margin="490,112,-447,32"
+                           Text="piździ jak w kieleckim" Margin="490,0,-447,32" Height="24" VerticalAlignment="Bottom"
                            />
             </Grid>
         </GroupBox>
@@ -89,16 +89,97 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Margin="5">
-                    <TextBlock Text="Poniedziałek" FontSize="18" FontWeight="Bold"
-                               HorizontalAlignment="Center"/>
-                    <TextBlock Text="23/01/2023" FontSize="16" FontWeight="ExtraLight"
-                               HorizontalAlignment="Center"/>
-                    <TextBlock Text="21,37°C" FontSize="14"
-                               HorizontalAlignment="Left"
-                               Margin="0,15,0,5"/>
-                    <TextBlock Text="1031 hPa" FontSize="14" 
+                    <TextBlock x:Name="firstDayWeek" 
+                               Text="Poniedziałek" FontSize="18" FontWeight="Bold"
                                HorizontalAlignment="Left"/>
-                    <TextBlock Text="Lekkie opady śniegu" FontSize="14"
+                    <TextBlock x:Name="firstDayDate" Text="23/01/2023" FontSize="16" FontWeight="ExtraLight"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="firstDayTemp" Text="21,37°C" FontSize="14"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                    <TextBlock x:Name="firstDayPress" Text="1031 hPa" FontSize="14" 
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="firstDayDesc" Text="Zachmurzenie średnio umiarkowane" FontSize="14"
+                               FontWeight="Thin" TextWrapping="Wrap"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="5">
+                    <TextBlock x:Name="secondDayWeek" 
+                               Text="Wtorek" FontSize="18" FontWeight="Bold"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="secondDayDate" 
+                               Text="24/01/2023" FontSize="16" FontWeight="ExtraLight"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="secondDayTemp" 
+                               Text="21,37°C" FontSize="14"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                    <TextBlock x:Name="secondDayPress" 
+                               Text="1031 hPa" FontSize="14" 
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="secondDayDesc" 
+                               Text="Zachmurzenie średnio umiarkowane" FontSize="14"
+                               FontWeight="Thin" TextWrapping="Wrap"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="2" Margin="5">
+                    <TextBlock x:Name="thirdDayWeek" 
+                               Text="Środa" FontSize="18" FontWeight="Bold"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="thirdDayDate" 
+                               Text="25/01/2023" FontSize="16" FontWeight="ExtraLight"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="thirdDayTemp" 
+                               Text="21,37°C" FontSize="14"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                    <TextBlock x:Name="thirdDayPress" 
+                               Text="1031 hPa" FontSize="14" 
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="thirdDayDesc" 
+                               Text="Zachmurzenie średnio umiarkowane" FontSize="14"
+                               FontWeight="Thin" TextWrapping="Wrap"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="3" Margin="5">
+                    <TextBlock x:Name="fourthDayWeek"
+                               Text="Czwartek" FontSize="18" FontWeight="Bold"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fourthDayDate" 
+                               Text="26/01/2023" FontSize="16" FontWeight="ExtraLight"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fourthDayTemp" 
+                               Text="21,37°C" FontSize="14"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                    <TextBlock x:Name="fourthDayPress" 
+                               Text="1031 hPa" FontSize="14" 
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fourthDayDesc" 
+                               Text="Zachmurzenie średnio umiarkowane" FontSize="14"
+                               FontWeight="Thin" TextWrapping="Wrap"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                </StackPanel>
+                <StackPanel Grid.Column="4" Margin="5">
+                    <TextBlock x:Name="fifthDayWeek"
+                               Text="Piątek" FontSize="18" FontWeight="Bold"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fifthDayDate" 
+                               Text="27/01/2023" FontSize="16" FontWeight="ExtraLight"
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fifthDayTemp"
+                               Text="21,37°C" FontSize="14"
+                               HorizontalAlignment="Left"
+                               Margin="0,5,0,5"/>
+                    <TextBlock x:Name="fifthDayPress" 
+                               Text="1031 hPa" FontSize="14" 
+                               HorizontalAlignment="Left"/>
+                    <TextBlock x:Name="fifthDayDesc" 
+                               Text="Zachmurzenie średnio umiarkowane" FontSize="14"
                                FontWeight="Thin" TextWrapping="Wrap"
                                HorizontalAlignment="Left"
                                Margin="0,5,0,5"/>
