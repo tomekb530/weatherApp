@@ -4,9 +4,68 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:weatherApp"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" 
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="#141414"
+        Style="{StaticResource CustomWindowStyle}"
+        Title="Weather App" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Pogoda na dziś / Main -->
+        <GroupBox Grid.Column="1" Header="Pogoda na dziś" Grid.Row="1" Margin="10,10,10,224">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="cityTextBlock"
+                           Grid.Column="0" Grid.Row="0" Margin="10,10,54,0" 
+                           Text="Biała Podlaska" FontSize="28" FontWeight="Bold"
+                           VerticalAlignment="Top"
+                           />
+                <TextBlock x:Name="temperatureTextBlock" 
+                           Text="2°C" FontSize="58" FontWeight="Light" Margin="72,54,180,44"
+                           />
+                <TextBlock Margin="267,52,-95,95"
+                           Text="Opis:" FontSize="12" 
+                           Foreground="#4CD3D3D3"
+                           />
+                <TextBlock x:Name="descriptionTextbox" Margin="267,67,-334,71" 
+                           Text="Lekkie opady śniegu" FontSize="16"
+                           />
+                <TextBlock Margin="267,97,-117,55"
+                           Text="Ciśnienie:" FontSize="12" 
+                           Foreground="#4CD3D3D3"
+                           />
+                <TextBlock x:Name="pressureTextbox" 
+                           Text="1031 hPa" FontSize="16" Margin="267,112,-125,32"
+                           />
+                <TextBlock Text="Prędkość wiatru:" FontSize="12" 
+                           Foreground="#4CD3D3D3" Margin="490,52,-371,100"
+                           />
+                <TextBlock x:Name="windSpeedTextBox" FontSize="16"
+                           Text="W chuj" Margin="490,67,-447,77"
+                           />
+                <TextBlock Text="Odczuwalna temperatura:" FontSize="12" 
+                           Foreground="#4CD3D3D3" Margin="490,97,-371,55"
+                           />
+                <TextBlock x:Name="realFeelTextBox" FontSize="16"
+                           Text="piździ jak w kieleckim" Margin="490,112,-447,32"
+                           />
+            </Grid>
+        </GroupBox>
 
     </Grid>
 </Window>
