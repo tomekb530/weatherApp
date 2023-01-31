@@ -111,6 +111,24 @@ namespace weatherApp
             }
         }
 
+        public int getTodayDayMonthSpecific(int day)
+        {
+            DateTime date = DateTime.Now;
+            int today = date.Day;
+            int month = date.Month;
+            int year = date.Year;
+            int daysInMonth = DateTime.DaysInMonth(year, month);
+            if (today + day > daysInMonth)
+            {
+                return today + day - daysInMonth;
+            }
+            else
+            {
+                return today + day;
+            }
+        }
+
+
         public async void GetFutureWeatherData() {
             List<WeatherModel> forecasts = null;
             try
@@ -130,23 +148,24 @@ namespace weatherApp
                 foreach (WeatherModel forecast in forecasts)
                 {
                     DateTime date = forecast.AnalysisDate;
-                    if (date.Day == DateTime.Now.Day + 1)
+                    
+                    if (date.Day == getTodayDayMonthSpecific(1))
                     {
                         day1 = forecast;
                     }
-                    else if (date.Day == DateTime.Now.Day + 2)
+                    else if (date.Day == getTodayDayMonthSpecific(2))
                     {
                         day2 = forecast;
                     }
-                    else if (date.Day == DateTime.Now.Day + 3)
+                    else if (date.Day == getTodayDayMonthSpecific(3))
                     {
                         day3 = forecast;
                     }
-                    else if (date.Day == DateTime.Now.Day + 4)
+                    else if (date.Day == getTodayDayMonthSpecific(4))
                     {
                         day4 = forecast;
                     }
-                    else if (date.Day == DateTime.Now.Day + 5)
+                    else if (date.Day == getTodayDayMonthSpecific(5))
                     {
                         day5 = forecast;
                     }
